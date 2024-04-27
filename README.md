@@ -217,6 +217,8 @@ class AppState extends Model<IAppState> {
     validateOrder(): boolean; //Валидация способа оплаты и адреса
 
     validateContacts(): boolean; //Валидация контактной информации
+
+    resetIndexes() //Метод, обновляет порядковые номера элементов массива корзины
 }
 
 /**
@@ -263,8 +265,6 @@ class Basket extends Component<IBasketView> {
     set items(items: HTMLElement[]) //Сеттер, принимает массив DOM элементов и размещает их в корзине
 
     set price(price: number) //Сеттер, устанавливает значение итоговой стоимости товаров в корзине
-
-    resetIndexes() //Метод, меняет порядковый номер в соответствии с расположением товара в корзине
 }
 
 //Класс, описывающий элемент корзины с товарами
