@@ -315,18 +315,18 @@ class Card extends Component<ICard> {
 }
 
 //Класс, описывающий подробную информацию о карточке
-class CatalogItemPreview extends Card {
+class CardPreview extends Card {
     //Ссылка на DOM элемент описания
     protected _description: HTMLParagraphElement;
 
     //Конструктор принимает контейнер, событие и сохраняет ссылку в параметр класса и вешает слушатель на кнопку
-    constructor(container: HTMLElement, actions?: ICardActions)
+    constructor(protected blockName: string, container: HTMLElement, actions?: ICardActions)
 
     set description(value: string)//Сеттер, устанавливает описание карточки
 }
 
 //Класс, описывающий форму заказа
-export class Form<T> extends Component<IFormState> {
+class Form<T> extends Component<IFormState> {
     //Параметры, хранящие ссылки на DOM элементы формы
     protected _submit: HTMLButtonElement;
     protected _errors: HTMLElement;

@@ -64,11 +64,12 @@ export class Card extends Component<ICard> {
     }
 
     set price(value: number | null)  {
-        this._price.textContent = String(
+        this.setText(this._price, String(
             value > 0
                 ? value + ' синапсов'
                 : 'бесценно'
-        );
+            )
+        )
     }
 
     set category(value: string) {
@@ -82,12 +83,12 @@ export class Card extends Component<ICard> {
 }
 
 //Класс, описывающий подробное описание карточки
-export class CatalogItemPreview extends Card {
+export class CardPreview extends Card {
     protected _description: HTMLParagraphElement;
 
-    constructor(container: HTMLElement, actions?: ICardActions) {
-        super('card-preview', container, actions);
-        this._description = container.querySelector(`.${this.blockName}.card__text`);
+    constructor(protected blockName: string, container: HTMLElement, actions?: ICardActions) {
+        super(blockName, container, actions);
+        this._description = container.querySelector(`.${this.blockName}__text`);
     }
 
     set description(value: string) {

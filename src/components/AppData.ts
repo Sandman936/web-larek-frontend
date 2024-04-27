@@ -31,6 +31,12 @@ export class AppState extends Model<IAppState> {
         this.basket = this.basket.filter(item => item.id !== id);
     }
 
+    resetIndexes() {
+        this.basket.forEach( (item, index) => {
+            item.index = index + 1;
+        })
+    }
+
     resetBasket() {
         this.basket.length = 0;
     }

@@ -1,7 +1,7 @@
 import './scss/styles.scss';
 
 import { AppState, CatalogChangeEvent } from './components/AppData';
-import { Card } from './components/Card';
+import { Card, CardPreview } from './components/Card';
 import { Page } from './components/Page';
 import { Api, ApiListResponse } from './components/base/api';
 import { EventEmitter } from './components/base/events';
@@ -66,7 +66,7 @@ events.on<CatalogChangeEvent>('items:changed', () => {
 
 // Открыть модальное окно с информацией о карточке
 events.on('card:select', (item: IProductItem) => {
-    const card = new Card('card', cloneTemplate(cardPreviewTemplate), {
+    const card = new CardPreview('card', cloneTemplate(cardPreviewTemplate), {
         onClick: () => events.emit('card:toBasket', item)
     });
 
@@ -105,7 +105,8 @@ events.on('basket:delete', (item: IProductItem) => {
             }),
         })
     } else {
-        basket.resetIndexes();
+        appData.resetIndexes();
+        events.emit('basket:open');
     }
 });
 

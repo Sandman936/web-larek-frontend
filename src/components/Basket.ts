@@ -50,19 +50,11 @@ export class Basket extends Component<IBasketView> {
             this._button.disabled = true;
         }
     }
-
-    resetIndexes() {
-        Array.from(this._list.children).forEach( (item, index) => {
-            const cardIndex = item.querySelector('.basket__item-index');
-            cardIndex.textContent = String(index + 1);
-        })
-    }
 }
 
 //Интерфейс товара в корзине
 interface IBasketItem extends IProductItem {
     id: string;
-    index: number;
 }
 
 export interface IBasketItemActions {

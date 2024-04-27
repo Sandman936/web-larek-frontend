@@ -8,6 +8,7 @@ export type ProductCategory = {
 
 export interface IProductItem {
     id: string;
+    index: number;
     description: string;
     image: string;
     title: string;
