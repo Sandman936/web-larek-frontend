@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#000000" />
 	<link rel="icon" href="/favicon.ico" />
-	<link rel="manifest" href="/manifest.json" />
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -167,7 +166,7 @@
 
 	<template id="card-catalog">
 		<button class="gallery__item card">
-			<span class="card__category card__category_soft">софт-скил</span>
+			<span class="card__category">софт-скил</span>
 			<h2 class="card__title">+1 час в сутках</h2>
 			<img class="card__image" src="<%=require('../images/Subtract.svg')%>" alt="" />
 			<span class="card__price">750 синапсов</span>
@@ -225,7 +224,7 @@
 				</label>
 			</div>
 			<div class="modal__actions">
-				<button type="submit" disabled class="button order__button">Далее</button>
+				<button type="submit" class="button order__button">Далее</button>
 				<span class="form__errors"></span>
 			</div>
 		</form>

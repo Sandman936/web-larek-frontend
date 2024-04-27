@@ -3,8 +3,7 @@ export type ApiListResponse<Type> = {
     items: Type[]
 };
 
-export type ApiPostMethods = 'POST' | 'PUT' | 'DELETE';
-
+//Класс для взаимодействия с сервером
 export class Api {
     readonly baseUrl: string;
     protected options: RequestInit;
@@ -32,10 +31,10 @@ export class Api {
         }).then(this.handleResponse);
     }
 
-    post(uri: string, data: object, method: ApiPostMethods = 'POST') {
+    post(uri: string, data: object) {
         return fetch(this.baseUrl + uri, {
             ...this.options,
-            method,
+            method: 'POST',
             body: JSON.stringify(data)
         }).then(this.handleResponse);
     }
